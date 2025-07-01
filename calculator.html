@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+
+                <td colspan="5">
+                    <input type="text" id="inputBox" value="0"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="powerButton" onclick="togglePower(this)">ON/OFF</td>
+                <td class="memButton" onclick="memFunctions( 'MC')">MC</td>
+                <td class="memButton" onclick="memFunctions( 'MR')">MR</td>
+                <td class="memButton" onclick="memFunctions( 'M-')">M-</td>
+                <td class="memButton" onclick="memFunctions( 'M+')">M+</td>
+            </tr>
+            <tr>
+                <td class="functionButton" onclick="percentPressed()">%</td>
+                <td class="digitButton" onclick="digitBtnPressed(7)">7</td>
+                <td class="digitButton" onclick="digitBtnPressed(8)">8</td>
+                <td class="digitButton" onclick="digitBtnPressed(9)">9</td>
+                <td class="operatorButton" onclick="operatorBtnPressed('x')">x</td>
+            </tr>
+            <tr>
+                <td class="functionButton" onclick="squareRootPressed()">&#8730;</td>
+                <td class="digitButton" onclick="digitBtnPressed(4)">4</td>
+                <td class="digitButton" onclick="digitBtnPressed(5)">5</td>
+                <td class="digitButton" onclick="digitBtnPressed(6)">6</td>
+                <td class="operatorButton" onclick="operatorBtnPressed('-')">-</td>
+            </tr>
+            <tr>
+                <td class="functionButton" onclick="digitBtnPressed('.')">.</td>
+                <td class="digitButton" onclick="digitBtnPressed(1)">1</td>
+                <td class="digitButton" onclick="digitBtnPressed(2)">2</td>
+                <td class="digitButton" onclick="digitBtnPressed(3)">3</td>
+                <td class="operatorButton" onclick="operatorBtnPressed('+')">+</td>
+            </tr>
+            <tr>
+                <td class="functionButton" onclick="toggleSign()">&#177;</td>
+                <td class="digitButton" colspan="2" onclick="digitBtnPressed(0)">0</td>
+
+                <td class="ACButton" onclick="btnACPressed()">AC</td>
+                <td class="operatorButton" onclick="operatorBtnPressed('/')">/</td>
+            </tr>
+            <tr>
+                <td class="operatorButton" colspan="5" onclick="equalsBtnPressed()">=</td>
+            </tr>
+        </table> 
+        <script>
+            var newLine = true;  //Boolean value. It determines if the next thing the user types should be on a new line.
+            var value1;
+            var currentOperator;
+
+            //Event handler is for when any digit button is pressed.
+            function digitBtnPressed(button){
+
+                if(newLine){
+                    document.getElementById("inputBox").value = button;
+                    newLine = false;
+                } else{
+                    var currentValue = document.getElementById("inputBox").value;
+                document.getElementById("inputBox").value = currentValue + button;
+                }
+            }
+
+            //Event handler is for when an AC button is pressed.
+            function btnACPressed(){
+                    document.getElementById("inputBox").value = 0;
+                    newLine = true;
+            }
+
+            //Event handler is for operator buttons.
+            function operatorBtnPressed(operator){
+                currentOperator = operator;
+                value1 = parseInt(document.getElementById("inputBox").value);
+                newLine = true;
+            }
+
+            //Event handler is for equates to button.
+            function equalsBtnPressed(){
+                var value2 = parseInt(document.getElementById("inputBox").value);
+                var finalTotal;
+
+                switch(currentOperator){
+                    case "+":
+                        finalTotal = value1 + value2;
+                        break;
+                        case "-":
+                        finalTotal = value1 - value2;
+                        break;
+                        case "/":
+                        finalTotal = value1 / value2;
+                        break;
+                        case "x":
+                        finalTotal = value1 * value2;
+                        break;
+                }
+                document.getElementById("inputBox").value = finalTotal;
+
+                value1 = 0;
+                newLine = true;
+            }
+
+            let memory = 0;
+
+            function memFunctions(operation){
+                let display = document.getElementById("inputBox");
+                let value = parseFloat(display.value);
+
+                switch (operation){
+                    case "M+":
+                        memory += value;
+                        break;
+                    case "M-":
+                            memory -= value;
+                            break;
+                    case "MR":
+                        display.value = memory;
+                        newLine = true;
+                        return;
+                    case "MC":
+                        memory = 0;
+                        display.value = 0;
+                        break;          
+                }
+                newLine = true;
+            }
+
+            function percentPressed(){
+                let inputBox = document.getElementById("inputBox");
+                let value = parseFloat(inputBox.value);
+
+                //Convert to percent
+                let result = value / 100;
+                inputBox.value = result;
+                newLine = true;
+            }
+
+            function squareRootPressed(){
+                let currentValue = parseFloat(document.getElementById("inputBox").value);
+                let result = Math.sqrt(currentValue);
+                document.getElementById("inputBox").value = result;
+                newLine = true;
+            }
+
+            function toggleSign(){
+                let inputBox = document.getElementById("inputBox");
+                let currentValue = parseFloat(inputBox.value);
+
+                //Toggle the sign
+                currentValue = -currentValue;
+
+                inputBox.value = currentValue;
+            }
+
+            function digitBtnPressed(button){
+                let input = document.getElementById("inputBox").value;
+
+                //If starting a new line or 0 is showing
+                if(newLine || input === "0"){
+                    if(button === "."){
+                        document.getElementById("inputBox").value = "0.";
+                    } else{
+                        document.getElementById("inputBox").value = button;
+                    }
+                    newLine = false;
+                } else{
+                    //Prevent multiple decimals
+                    if(button === "." && input.includes(".")) return;
+
+                    document.getElementById("inputBox").value += button;
+                }
+            }
+
+            calculatorIsOn = true; //Track the power state
+
+            function togglePower(button){
+                let display = document.getElementById("inputBox");
+                let buttons = document.querySelectorAll("td");
+
+                if(calculatorIsOn){
+                    //Turn OFF: Show "OFF" and disable all other buttons
+                    display.value = "OFF";
+                    buttons.forEach(btn => {
+                        if(btn !== button){
+                            btn.onclikBackup = btn.onclick;
+                            btn.onclick = null;
+                        }
+                    });
+                    calculatorIsOn = false;
+                } else{
+                    //Turn ON: show "0" and restore all buttons
+                    display.value = "0";
+                    buttons.forEach(btn => {
+                        if(btn.onclick == null && btn.onclikBackup) {
+                            btn.onclick = btn.onclikBackup;
+                        }
+                    });
+                    calculatorIsOn = true;
+                    newLine = true;
+                }
+            }
+
+        </script>
+    </body>
+</html>

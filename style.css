@@ -1,0 +1,72 @@
+table{
+    color: #fff;
+    text-align: center;
+    border-collapse: collapse;
+    font: normal 3em Arial, Helvetica, sans-serif;
+}
+
+tr{
+    height: 16.02vh;
+    background-color: #4e494d;
+}
+
+td{
+    width: 25vw;
+    border: 1px solid #4e494d;
+}
+
+#inputBox{
+    background-color: #4e494d;
+    text-align: right;
+    width: 100%;
+    font-size: 2em;
+    color: #fff;
+    border: 0px;
+}
+
+.digitButton{
+    background-color: #807e80;
+}
+
+.operatorButton{
+    background-color: #78bd1ea8;
+}
+
+.ACButton{
+    background-color: #656165;
+}
+
+.memButton{
+    background-color: #b2f470c4;
+}
+
+.memButton:hover{
+    background-color: #93e02ffe;
+}
+
+.functionButton{
+    background-color: #b2f470c4;
+    color: #000;
+    font-weight: bold;
+}
+
+.powerButton {
+    background-color: #d32f2f; /* A bold red */
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.powerButton:hover {
+    background-color: #b71c1c;
+}
+
+.powerButton:active {
+    background-color: #880e4f;
+}
