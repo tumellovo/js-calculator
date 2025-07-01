@@ -8,7 +8,7 @@ The original project was a simple number calculator, but I had some fun and adde
 
 ## Live Demo
 
- [Open Calculator](https://tumellovo.github.io/js-calculator/calculator.html)  
+ [Open Calculator](https://tumellovo.github.io/js-calculator/index.html)  
 
 ---
 
