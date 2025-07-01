@@ -13,7 +13,7 @@ The original project was a simple number calculator, but I had some fun and adde
 - Memory buttons: `MC`, `MR`, `M-`, `M+`
 - `ON/OFF` button to simulate a real device (When it is off, the word OFF is written on the screen and the buttons do not work. When it is on, the number 0 shows that it is on and functioning.)
 - Percentage button (`%`)
-- Square root function (``)
+- Square root function (`√`)
 - Plus-minus toggle (`±`)
 - Decimal point support (`.`)
 
