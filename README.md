@@ -1,23 +1,28 @@
 # JS Calculator
 
-This is my very own calculator app - part of my JavaScript learning journey during Week 4 of a 9-week wen development program.
+This is my very own calculator app — part of my JavaScript learning journey during **Week 4** of a 9-week web development program.
 
-The original project was a simple number calculator, but I had some fun and added **extra features** like memory functions and more interactive buttons. Explore, testit out, and feel free to be impressed!
+The original project was a simple number calculator, but I had some fun and added extra features like memory functions and more interactive buttons. Explore, test it out, and feel free to be impressed!
+
+---
 
 ## Live Demo
 
-[Open Calculator](https://tumellovo.github.io/js-calculator/)
+ [Open Calculator](https://tumellovo.github.io/js-calculator/calculator.html)  
+
+---
 
 ## Features I Added
 
-- Memory buttons: `MC`, `MR`, `M-`, `M+`
-- `ON/OFF` button to simulate a real device (When it is off, the word OFF is written on the screen and the buttons do not work. When it is on, the number 0 shows that it is on and functioning.) 
-- Percentage button (`%`)
-- Square root function (`√`)
-- Plus-minus toggle (`±`)
-- Decimal point support (`.`)
-
-All the basics are still here: `0-9`, `+`, `-`, `×`, `÷`, `=`, and `AC`.
+- **Memory buttons**: `MC`, `MR`, `M-`, `M+`
+- **ON/OFF button** to simulate a real device  
+  → When it's **off**, the screen shows `"OFF"` and buttons are disabled  
+  → When it's **on**, the screen shows `"0"` and the calculator functions normally
+- **Percentage button** (`%`)
+- **Square root function** (`√`)
+- **Plus-minus toggle** (`±`)
+- **Decimal point** support (`.`)
+- All the basics are still here: `0–9`, `+`, `−`, `×`, `÷`, `=`, and `AC`
 
 ---
 
@@ -25,16 +30,20 @@ All the basics are still here: `0-9`, `+`, `-`, `×`, `÷`, `=`, and `AC`.
 
 Enhancing an existing calculator challenged me in new ways:
 
-- **Integrating new buttons** meant figuring out how to expand the layout without breaking existing code
-- **Logic building**: I had to dive into `if/else` statements work, especially for the ON/OFF toggle
-- I researched how functions like `math.sqrt()`, plus-minus toggles, and percentage calculations are written in JavaScript
-- Realised the importance of layout structure - tried (and failed) to recreate a Casio pocket-style look
-- Learned that too many tweaks without a plan can break a working app, so I stuck with what worked
+- Integrating new buttons meant figuring out how to expand the layout without breaking the existing structure
+- I had to build **ON/OFF logic** using `if/else` statements
+- Researched how JavaScript handles:
+  - `Math.sqrt()`
+  - Toggling between positive and negative numbers
+  - Calculating percentages
+- Learned the value of **clean layout** and positioning (I tried — and failed — to recreate a Casio pocket-style calculator)
+- Most importantly: too many tweaks without a plan can break a working app — I learned to stick with what works!
 
 ---
 
 ## Background
 
-Built while following IT Varsity's tutorial, but all extra features and polish are my own experiments.
-Part of the bigger **JS Learning** repo here
-[View JS Learning Repository](https://github.com/tumellovo/JS-Learning)
+Built while following a tutorial from **IT Varsity**, but all extra features, logic, and styling were added through experimentation and curiosity.
+
+Part of the bigger [JS Learning repository](https://github.com/tumellovo/JS-learning)  
+→ [Visit Week 4 - JavaScript Introduction](https://github.com/tumellovo/JS-learning)
