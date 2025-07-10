@@ -48,5 +48,5 @@ Enhancing an existing calculator challenged me in new ways:
 
 Built while following a tutorial from **IT Varsity**, but all extra features, logic, and styling were added through experimentation and curiosity.
 
-Part of the bigger JS Learning repository [JS Learning repository](https://github.com/tumellovo/JS-learning)  
+Part of the bigger [JS Learning repository](https://github.com/tumellovo/JS-learning)  
 → [Visit Week 4 - JavaScript Introduction](https://github.com/tumellovo/JS-learning)
