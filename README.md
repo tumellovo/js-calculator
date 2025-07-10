@@ -1,6 +1,6 @@
 # JS Calculator
 
-This is my very own calculator app — part of my JavaScript learning journey during **Week 4** of a 9-week web development program.
+This is my very own calculator app — part of my JavaScript learning journey during **Week 5** of a 9-week web development program.
 
 The original project was a simple number calculator, but I had some fun and added extra features like memory functions and more interactive buttons. Explore, test it out, and feel free to be impressed!
 
