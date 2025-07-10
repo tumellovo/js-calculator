@@ -4,6 +4,9 @@ This is my very own calculator app — part of my JavaScript learning journey du
 
 The original project was a simple number calculator, but I had some fun and added extra features like memory functions and more interactive buttons. Explore, test it out, and feel free to be impressed!
 
+**Note:** Although the calculator was built in **Week 5**, it remains inside the `JS Learning` folder in GitHub because it connects directly to the JavaScript lessons covered in Week 4.
+→ [Visit Week 4 - JavaScript Introduction](https://github.com/tumellovo/JS-learning)
+
 ---
 
 ## Live Demo
@@ -45,5 +48,5 @@ Enhancing an existing calculator challenged me in new ways:
 
 Built while following a tutorial from **IT Varsity**, but all extra features, logic, and styling were added through experimentation and curiosity.
 
-Part of the bigger [JS Learning repository](https://github.com/tumellovo/JS-learning)  
+Part of the bigger JS Learning repository [JS Learning repository](https://github.com/tumellovo/JS-learning)  
 → [Visit Week 4 - JavaScript Introduction](https://github.com/tumellovo/JS-learning)
